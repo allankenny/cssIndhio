@@ -1,0 +1,8 @@
+.wrapper {
+  display: block;
+  width: 100%;
+  height: calc(100% - 56px - 50px);
+  position: absolute;
+  left: 0;
+  top: 56px;
+}

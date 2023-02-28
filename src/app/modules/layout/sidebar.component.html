@@ -1,0 +1,190 @@
+<!-- ========== Left Sidebar Start ========== -->
+<div class="wrapper">
+  <section class="contentArea">
+    <div id="content">
+      <div class="left-component" id="sidebar-left">
+        <form class="radioToggle ng-valid ng-dirty ng-valid-parse">
+          <!-- <div ng-show="showReportGroupSelection.leadership"> -->
+          <div id="sideBar-full" *ngIf="!menuHide">
+            <input type="radio" id="reportGroupLeadership" name="reportOptionsGroup" value="leadership"
+              class="ng-untouched ng-valid ng-not-empty ng-dirty ng-valid-parse">
+            <label for="reportGroupLeadership" class="selected">
+              <img class="icon-size"
+                src="https://www.qa-cli.com/apps/k12/7.14.13/sap/modules/tt-report-module/styles/img/leadershipIcon.svg">
+              Relatórios de liderança
+            </label>
+
+            <input type="radio" id="reportGroupClass" name="reportOptionsGroup" value="class"
+              class="ng-untouched ng-valid ng-not-empty ng-dirty">
+            <label for="reportGroupClass" class="">
+              <img class="icon-size"
+                src="https://www.qa-cli.com/apps/k12/7.14.13/sap/modules/tt-report-module/styles/img/gradCap.svg">
+              Relatórios de aula e de aluno
+            </label>
+          </div>
+
+          <div id="sideBar-small" *ngIf="menuHide">
+            <input type="radio" id="reportGroupLeadership" name="reportOptionsGroup" value="leadership"
+              class="ng-untouched ng-valid ng-not-empty ng-dirty ng-valid-parse">
+            <label for="reportGroupLeadership" class="selected">
+              <img class="icon-size"
+                src="https://www.qa-cli.com/apps/k12/7.14.13/sap/modules/tt-report-module/styles/img/leadershipIcon.svg">
+            </label>
+
+            <input type="radio" id="reportGroupClass" name="reportOptionsGroup" value="class"
+              class="ng-untouched ng-valid ng-not-empty ng-dirty">
+            <label for="reportGroupClass" class="">
+              <img class="icon-size"
+                src="https://www.qa-cli.com/apps/k12/7.14.13/sap/modules/tt-report-module/styles/img/gradCap.svg">
+            </label>
+          </div>
+        </form>
+
+        <div class="liner hasBoth classLeftCol" *ngIf="!menuHide">
+          <div class="leadershipReportOptions">
+            <div class="elasticWaistband">
+              <button type="button" class="floatRight button">Gerar relatório</button>
+              <button type="button" class="floatRight button">Redefinir</button>
+              <h3 class="floatLeft dateText"><span>Intervalo de semana</span><!----><span>: 5 semanas</span><!---->
+              </h3>
+              <p class="range unclear"><span>De</span><!----><span> (Seg)</span><!---->
+            </div>
+          </div>
+        </div>
+        <div id="container-filters" class="container-filters">
+          <div class="leadershipSchools">
+            <div class="lssLiner">
+              <label>Escolher escolas:</label>
+              <div class="selectAll">
+                <input type="checkbox" id="allSchoolsSelected" name="allSchoolsSelected" value="allSchoolsSelected"
+                  class="ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched">
+                <label for="allSchoolsSelected" title="Selecionar todos">Selecionar todos</label>
+              </div>
+              <div class="leadershipSchoolScroller">
+                <div class="leadershipSchool">
+                  <input type="checkbox" id="schoolsSelected0" name="schoolsSelected" value="currSchool"
+                    class="ng-pristine ng-untouched ng-valid ng-not-empty selected">
+                  <label for="schoolsSelected0" class="labelForSchoolCheckbox" title="AQA7 ALL">AQA7 ALL</label>
+                </div>
+                <div class="leadershipSchool">
+                  <input type="checkbox" id="schoolsSelected1" name="schoolsSelected" value="currSchool"
+                    class="ng-pristine ng-untouched ng-valid ng-not-empty selected">
+                  <label for="schoolsSelected1" class="labelForSchoolCheckbox" title="AQA7 Mathia">AQA7 Mathia</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="leadershipSchoolFilter">
+            <label>Filtrar por:</label>
+            <div>
+              <label>
+                <span *ngIf="isFilterExpanded" (click)="expandOrCollapse()" >[-] </span>
+                <span *ngIf="!isFilterExpanded" (click)="expandOrCollapse()">[+] </span>Categoria da aula
+              </label>
+              <div *ngIf="!isFilterExpanded">
+                <div class="filterItem" style="margin-left:15px;" *ngFor="let option of options" >
+                  <input ng-show="isFilterExpanded" type="checkbox" name="filterName" value="option" ng-class="{'selected':filterList[ $index ].selected}" class="ng-valid ng-dirty ng-valid-parse ng-touched ng-empty">
+                  <label ng-show="isFilterExpanded" for="filterName978_450_967_0" title="option" class="">{{option}}</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="leftColToggle" (click)="leftColToggle()">
+          <span *ngIf="!leftColExpand">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.5 16.25L6.25 10L12.5 3.75" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span *ngIf="leftColExpand">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.5 3.75L13.75 10L7.5 16.25" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </button>
+      </div>
+
+
+      <div class="right-component">
+        <div class="wrapperDetails">
+          <!-- <div class="wrapperDtlsLiner ng-hide" ng-show="reportOptions.group === 'class'">
+            <span class="datebox ng-hide" ng-show="report.showDateSelect &amp;&amp; reportOptions.class.selectedClass">
+              <button class="whiteButton noPrint downArrow" ng-click="calendarToggle($event)" ng-class="{'upArrow':showCalendar}">fevereiro 15, 2023 -- fevereiro 22, 2023</button>
+            </span>
+            <span class="currStudent noPrint"> </span>
+            <button ng-show="reportOptions.class.isV2report &amp;&amp; reportOptions.class.selectedSchool &amp;&amp; reportOptions.class.selectedClass.id &amp;&amp; klass.roster.length > 2" class="blueButton noPrint downArrow ng-hide" type="button" ng-click="showSettingsToggle($event)" ng-class="{'upArrow':showSettingsMenu}">Display Options</button>
+            <button ng-show="reportOptions.class.isV2report" ng-click="print()" class="blueButton noPrint print" title="Imprimir">Imprimir</button>
+                          <button ng-show="report.id === 'progress-report'" onclick="window.open('https://www.carnegielearning.com/contact/#support','_blank');" type="button" class="blueButton noPrint ng-hide" style="margin-right:0;"><span class="smallHider">Submit </span>Feedback</button>
+            <div class="currentStudentPrint printOnly">
+              <p class="printCol"><span class="printColHead">Relatório de liderança para</span><span> </span></p>
+              <p class="printCol ng-hide" ng-show="reportOptions.class.isV2report &amp;&amp; reportOptions.class.selectedClass &amp;&amp; report.id !== 'skills-v2-report'"><span class="printColHead">With data from</span><span>15 de fev de 2023 -- 22 de fev de 2023</span></p>
+              <p class="printCol"><span class="printColHead">Generated on</span><span>2/22/2023</span></p>
+            </div>
+          </div> -->
+        </div>
+        <div class="wrapperHousing">
+          <div class="report-view">
+            <ul class="nav nav-tabs" >
+              <li  class="uib-tab nav-item active"  heading="Relatório de liderança" index="$index">
+                <a href="" class="nav-link" uib-tab-heading-transclude="">Relatório de liderança</a>
+              </li><!---->
+            </ul>
+            <div class="printDiv">
+              <div class="printMenu">
+                <button class="hidePrint" ng-class="{&quot;disabled&quot;:disablePrintButton()}">Imprimir</button>
+                <button class="hidePrint" ng-class="{&quot;disabled&quot;:disableExportButton(report, student)}">Exportar</button>
+              </div>
+              <div id="accurat-leadership-report-visual">
+                <div class="rpt-topbar">
+                  <div class="top-bar">
+                    <div class="item">
+                      <strong>2</strong> Escolas selecionado
+                    </div>
+
+                    <div class="spacer"></div>
+
+                    <div class="item">
+                      <strong>359</strong> Aulas selecionado
+                    </div>
+
+                    <div class="spacer"></div>
+
+
+                    <div class="item" ng-if="filters.classCategoriesSelected.length == 0">
+                      Todas as categorias de aula incluídas
+                    </div>
+
+                    <div class="spacer"></div>
+
+                    <div class="item" ng-if="filters.classProfilesSelected.length == 0">
+                      Todos os perfis de aula incluídos
+                    </div>
+
+                    <div class="spacer"></div>
+
+                    <div class="item">
+                      Período: <strong>01/30/23</strong> para <strong>03/05/23</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </section>
+</div>
+<!-- Left Sidebar End -->

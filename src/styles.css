@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --repLightBlue: #43DFFF;
+  --repDarkBlue: #00BCE2;
+  --repGradient: linear-gradient(var(--repLightBlue),var(--repDarkBlue));
+  --repGradientRev: linear-gradient(var(--repDarkBlue),var(--repLightBlue));
+  --repModalTitle: linear-gradient(var(--repDarkBlue),var(--repLightBlue));
+  --repSolidBlue: #00BCE2;
+  --repLeftColWidth: 283px;
+  --repLeftColWidthCollapse: 40px;
+  --wrapperDetailsHeight: 54px;
+  --dialogTitle: linear-gradient(#00BCE2,#43DFFF);
+  --lightGrayBoxShadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+  --secondary: #00BCE2;
+  --tabsHeight: 41px;
+  --componentBg: #F5F5F5;
+  --lightGray: #EFEFEF;
+  --mediumGray: #CCCCCC;
+  --darkGray: #707070;
+  --status-yellow: #FFD800;
+  --status-blue: #43DFFF;
+  --status-green: #A5E200;
+  --status-orange: #FF6C00;
+  --status-gray: #EFEFEF;
+}
+
+html {
+  --identitycontainer: #293940;
+  --primary: #23C7FC;
+  --action: #22C7FA;
+  --actionhover: #1EB4E1;
+  --dialog: #666666;
+  --headerHeight: 56px;
+  --footerHeight: 50px;
+  --borderRadiusSmall: 2px;
+  --borderRadiusMedium: 4px;
+  --borderRadiusLarge: 6px;
+  --borderRadiusXL: 8px;
+  --borderRadiusSmallTop: var(--borderRadiusSmall,2px) var(--borderRadiusSmall,2px) 0 0;
+  --borderRadiusSmallBot: 0 0 var(--borderRadiusSmall,2px) var(--borderRadiusSmall,2px);
+  --borderRadiusMedTop: var(--borderRadiusMedium,4px) var(--borderRadiusMedium,4px) 0 0;
+  --borderRadiusMedBot: 0 0 var(--borderRadiusMedium,4px) var(--borderRadiusMedium,4px);
+  --quarterTransEaseInOut: all .25s ease-in-out;
+  --dot2TransEaseOut: all .2s ease-out;
+  --dot3TransEaseOut: all .3s ease-out;
+  --grayTransRgbaZeroPerc: rgba(0,0,0,0);
+  --grayTransRgba20Perc: rgba(0,0,0,0.2);
+  --grayTransRgba50Perc: rgba(0,0,0,0.5);
+}
+
+
+body{
+  font-size: 14px;
+  line-height: 1.4;
+  color: #333;
+  background-color: #fff;
+  margin:0;
+  display:block;
+  font-family: "Open Sans",helvetica,arial,sans-serif;
+}
+
+.display-none{
+  display: none;
+}
+
+.hide-side-bar{
+  width: 40px !important;
+  flex-basis: 40px !important;
+  transition: all .2s ease-out;
+}
+

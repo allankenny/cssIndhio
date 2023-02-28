@@ -1,0 +1,34 @@
+
+#footer {
+  width: 100%;
+  height: 50px;
+  background: #293940;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  font-family: "Open Sans",helvetica,arial,sans-serif;
+}
+
+#footer p {
+  padding: 0px;
+  margin: 0px;
+  font-size: 0.7em;
+}
+
+#footer .version-string {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+#footer #breadcrumbs li {
+  color: #fff;
+  float: left;
+}
+
+#footer p:not(.cLoc) {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+}
